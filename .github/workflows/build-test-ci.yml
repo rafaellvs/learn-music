@@ -12,5 +12,5 @@ jobs:
         with:
           node-version: '16.x'
       - run: yarn
-      - run: yarn build --passWithNoTests
-      - run: yarn test
+      - run: yarn build
+      - run: yarn test --passWithNoTests
