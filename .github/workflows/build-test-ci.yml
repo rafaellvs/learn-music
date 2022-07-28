@@ -3,7 +3,7 @@ name: Build and test
 on: [push]
 
 jobs:
-  build:
+  build-and-test:
     runs-on: ubuntu-latest
 
     steps:
@@ -12,5 +12,5 @@ jobs:
         with:
           node-version: '16.x'
       - run: yarn
-      - run: yarn build
+      - run: yarn build --passWithNoTests
       - run: yarn test
