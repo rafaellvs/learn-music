@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-import links from 'src/helpers/nav-links'
+import navLinks from 'src/helpers/nav-links'
 
 import Link from 'src/components/Link'
 import MenuIcon from './MenuIcon'
@@ -21,7 +21,7 @@ const NavBar = (): JSX.Element => {
       />
 
       <DesktopContainer>
-        {links.map(link =>
+        {navLinks.map(link =>
           <Link key={link.id} to={link.href}>
             {link.title}
           </Link>
@@ -29,7 +29,7 @@ const NavBar = (): JSX.Element => {
       </DesktopContainer>
 
       <MobileContainer isOpen={isOpen}>
-        {links.map(link =>
+        {navLinks.map(link =>
           <Link
             key={link.id}
             to={link.href}
