@@ -1,6 +1,6 @@
 import NavLink from 'src/types/NavLink'
 
-const links: NavLink[] = [
+const navLinks: NavLink[] = [
   {
     id: 0,
     title: 'Home',
@@ -13,4 +13,4 @@ const links: NavLink[] = [
   },
 ]
 
-export default links
+export default navLinks
