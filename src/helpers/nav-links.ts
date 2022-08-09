@@ -8,8 +8,8 @@ const navLinks: NavLink[] = [
   },
   {
     id: 1,
-    title: 'Note Interval',
-    href: '/note-interval',
+    title: 'Semitone Interval',
+    href: '/semitone-interval',
   },
 ]
 

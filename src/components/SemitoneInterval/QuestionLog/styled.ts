@@ -1,11 +1,11 @@
 import styled from 'styled-components'
 
-import IntervalQuestion from 'src/types/IntervalQuestion'
+import SemitoneIntervalQuestion from 'src/types/SemitoneIntervalQuestion'
 
 import theme from 'src/theme'
 
 type ResultProps = {
-  $result: IntervalQuestion['result']
+  $result: SemitoneIntervalQuestion['result']
 }
 
 export const Container = styled.div`
