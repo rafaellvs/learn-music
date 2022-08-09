@@ -1,7 +1,7 @@
 import Note from 'src/types/Note'
 import Direction from 'src/types/Direction'
 
-type IntervalQuestion = {
+type SemitoneIntervalQuestion = {
   id: string,
   firstNote: Note,
   secondNote: Note,
@@ -11,4 +11,4 @@ type IntervalQuestion = {
   result: boolean,
 }
 
-export default IntervalQuestion
+export default SemitoneIntervalQuestion

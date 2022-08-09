@@ -2,7 +2,7 @@ import React from 'react'
 
 import INTERVALS from 'src/helpers/constants/intervals'
 
-import IntervalQuestion from 'src/types/IntervalQuestion'
+import SemitoneIntervalQuestion from 'src/types/SemitoneIntervalQuestion'
 
 import { padNumberWithZeros } from 'src/helpers/utils'
 
@@ -15,7 +15,7 @@ import {
 } from './styled'
 
 type QuestionLogProps = {
-  questions: IntervalQuestion[]
+  questions: SemitoneIntervalQuestion[]
 }
 
 const QuestionLog = (props: QuestionLogProps): JSX.Element => {

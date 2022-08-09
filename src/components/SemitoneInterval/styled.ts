@@ -4,7 +4,7 @@ import theme from 'src/theme'
 
 export const Container = styled.div``
 
-export const AnswerButtons = styled.div`
+export const AnswerButtonsContainer = styled.div`
   padding: 1rem 0;
 
   @media (max-width: 768px) {
