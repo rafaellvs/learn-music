@@ -8,8 +8,8 @@ import IntervalQuestion from 'src/types/IntervalQuestion'
 import {
   generateRandomNote,
   generateRandomDirection,
-  getDistanceAnswer,
-} from 'src/helpers/utils'
+  getSemitonesInterval,
+} from 'src/managers/notes'
 
 import QuestionLog from './QuestionLog'
 import {
@@ -27,7 +27,7 @@ const NoteInterval = (): JSX.Element => {
   const [questionLog, setQuestionLog] = useState<IntervalQuestion[]>([])
 
   const answer: number = useMemo((): number => {
-    return getDistanceAnswer(firstNote, secondNote, direction)
+    return getSemitonesInterval(firstNote, secondNote, direction)
   }, [firstNote, secondNote, direction])
 
   const handleAnswerClick = (selectedAnswer: number): void => {
