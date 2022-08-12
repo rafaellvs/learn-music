@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { v4 as uuidv4 } from 'uuid'
 
-import Note from 'src/types/Note'
-import Direction from 'src/types/Direction'
 import SemitoneIntervalQuestion from 'src/types/SemitoneIntervalQuestion'
 
 import {
@@ -14,31 +12,15 @@ import {
 import QuestionLog from './QuestionLog'
 import {
   Container,
-  AnswerButtonsContainer,
+  AnswerButtons,
   AnswerButton,
   NoteSymbol,
 } from './styled'
 
-type AnswerButtonsProps = {
-  handleAnswerClick: (selectedAnswer: number) => void
-}
-
-const AnswerButtons = ({ handleAnswerClick }: AnswerButtonsProps): JSX.Element =>
-  <AnswerButtonsContainer>
-    {Array.from({ length: 12 }).map((_, index) =>
-      <AnswerButton
-        key={index}
-        onClick={() => handleAnswerClick(index + 1)}
-      >
-        {index + 1}
-      </AnswerButton>
-    )}
-  </AnswerButtonsContainer>
-
 const SemitoneInterval = (): JSX.Element => {
-  const [firstNote, setFirstNote] = useState<Note>(generateRandomNote())
-  const [secondNote, setSecondNote] = useState<Note>(generateRandomNote())
-  const [direction, setDirection] = useState<Direction>(generateRandomDirection())
+  const [firstNote, setFirstNote] = useState<SemitoneIntervalQuestion['firstNote']>(generateRandomNote())
+  const [secondNote, setSecondNote] = useState<SemitoneIntervalQuestion['secondNote']>(generateRandomNote())
+  const [direction, setDirection] = useState<SemitoneIntervalQuestion['direction']>(generateRandomDirection())
   const [userAnswer, setUserAnswer] = useState<SemitoneIntervalQuestion['userAnswer']>(null)
   const [questionLog, setQuestionLog] = useState<SemitoneIntervalQuestion[]>([])
 
@@ -85,7 +67,16 @@ const SemitoneInterval = (): JSX.Element => {
         What is the distance (semitones) between <NoteSymbol>{firstNote}</NoteSymbol> and <NoteSymbol>{secondNote}</NoteSymbol>, going {direction}?
       </p>
 
-      <AnswerButtons handleAnswerClick={handleAnswerClick} />
+      <AnswerButtons>
+        {Array.from({ length: 12 }).map((_, index) =>
+          <AnswerButton
+            key={index}
+            onClick={() => handleAnswerClick(index + 1)}
+          >
+            {index + 1}
+          </AnswerButton>
+        )}
+      </AnswerButtons>
 
       <QuestionLog questions={questionLog} />
     </Container>
