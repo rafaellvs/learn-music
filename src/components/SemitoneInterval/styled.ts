@@ -1,10 +1,9 @@
 import styled from 'styled-components'
-
 import theme from 'src/theme'
 
 export const Container = styled.div``
 
-export const AnswerButtonsContainer = styled.div`
+export const AnswerButtons = styled.div`
   padding: 1rem 0;
 
   @media (max-width: 768px) {
@@ -32,8 +31,4 @@ export const AnswerButton = styled.button`
 export const NoteSymbol = styled.span`
   font-weight: bold;
   font-size: 125%;
-`
-
-export const QuestionLog = styled.div`
-  padding-top: 3rem;
 `
