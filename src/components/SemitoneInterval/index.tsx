@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { v4 as uuidv4 } from 'uuid'
 
 import SemitoneIntervalQuestion from 'src/types/SemitoneIntervalQuestion'
@@ -18,26 +18,14 @@ import {
 } from './styled'
 
 const SemitoneInterval = (): JSX.Element => {
-  const [firstNote, setFirstNote] = useState<SemitoneIntervalQuestion['firstNote']>(generateRandomNote())
-  const [secondNote, setSecondNote] = useState<SemitoneIntervalQuestion['secondNote']>(generateRandomNote())
-  const [direction, setDirection] = useState<SemitoneIntervalQuestion['direction']>(generateRandomDirection())
-  const [userAnswer, setUserAnswer] = useState<SemitoneIntervalQuestion['userAnswer']>(null)
   const [questionLog, setQuestionLog] = useState<SemitoneIntervalQuestion[]>([])
 
-  const answer: number = getSemitonesInterval(firstNote, secondNote, direction)
+  const firstNote: SemitoneIntervalQuestion['firstNote'] = generateRandomNote()
+  const secondNote: SemitoneIntervalQuestion['secondNote'] = generateRandomNote()
+  const direction: SemitoneIntervalQuestion['direction'] = generateRandomDirection()
+  const answer: SemitoneIntervalQuestion['answer'] = getSemitonesInterval(firstNote, secondNote, direction)
 
-  const handleAnswerClick = (selectedAnswer: number): void => {
-    setUserAnswer(selectedAnswer)
-  }
-
-  const resetQuestionParams = (): void => {
-    setFirstNote(generateRandomNote())
-    setSecondNote(generateRandomNote())
-    setDirection(generateRandomDirection())
-    setUserAnswer(null)
-  }
-
-  const addToQuestionLog = (): void => {
+  const handleAnswerClick = (selectedAnswer: SemitoneIntervalQuestion['answer']): void => {
     setQuestionLog([
       {
         id: uuidv4(),
@@ -45,19 +33,12 @@ const SemitoneInterval = (): JSX.Element => {
         secondNote,
         direction,
         answer,
-        userAnswer,
-        result: userAnswer === answer,
+        userAnswer: selectedAnswer,
+        result: selectedAnswer === answer,
       },
       ...questionLog,
     ])
   }
-
-  useEffect(() => {
-    if (userAnswer) {
-      addToQuestionLog()
-      resetQuestionParams()
-    }
-  }, [userAnswer])
 
   return (
     <Container>
