@@ -1,13 +1,9 @@
 import React, { useState } from 'react'
 import { v4 as uuidv4 } from 'uuid'
 
-import SemitoneIntervalQuestion from 'src/types/SemitoneIntervalQuestion'
+import { SemitoneIntervalQuestion } from 'src/types/SemitoneIntervalQuestion'
 
-import {
-  generateRandomNote,
-  generateRandomDirection,
-  getSemitonesInterval,
-} from 'src/managers/notes'
+import { generateSemitoneIntervalQuestion } from 'src/managers/semitone-interval'
 
 import QuestionLog from './QuestionLog'
 import {
@@ -20,10 +16,7 @@ import {
 const SemitoneInterval = (): JSX.Element => {
   const [questionLog, setQuestionLog] = useState<SemitoneIntervalQuestion[]>([])
 
-  const firstNote: SemitoneIntervalQuestion['firstNote'] = generateRandomNote()
-  const secondNote: SemitoneIntervalQuestion['secondNote'] = generateRandomNote()
-  const direction: SemitoneIntervalQuestion['direction'] = generateRandomDirection()
-  const answer: SemitoneIntervalQuestion['answer'] = getSemitonesInterval(firstNote, secondNote, direction)
+  const { firstNote, secondNote, direction, answer } = generateSemitoneIntervalQuestion()
 
   const handleAnswerClick = (selectedAnswer: SemitoneIntervalQuestion['answer']): void => {
     setQuestionLog([
@@ -42,7 +35,7 @@ const SemitoneInterval = (): JSX.Element => {
 
   return (
     <Container>
-      <h1>Semitone interval training</h1>
+      <h1>Semitone interval</h1>
 
       <p>
         What is the distance (semitones) between <NoteSymbol>{firstNote}</NoteSymbol> and <NoteSymbol>{secondNote}</NoteSymbol>, going {direction}?
