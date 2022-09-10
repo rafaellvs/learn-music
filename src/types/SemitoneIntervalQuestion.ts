@@ -1,5 +1,4 @@
-import Note from 'src/types/Note'
-import Direction from 'src/types/Direction'
+import { Note, Direction } from 'src/types/ChromaticScale'
 
 type SemitoneIntervalQuestion = {
   id: string,
@@ -11,4 +10,4 @@ type SemitoneIntervalQuestion = {
   result: boolean,
 }
 
-export default SemitoneIntervalQuestion
+export type { SemitoneIntervalQuestion }
