@@ -4,4 +4,4 @@ type NavLink = {
   href: string,
 }
 
-export default NavLink
+export type { NavLink }

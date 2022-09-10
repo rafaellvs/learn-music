@@ -2,7 +2,7 @@ import React from 'react'
 
 import INTERVALS from 'src/helpers/constants/intervals'
 
-import SemitoneIntervalQuestion from 'src/types/SemitoneIntervalQuestion'
+import { SemitoneIntervalQuestion } from 'src/types/SemitoneIntervalQuestion'
 
 import { padNumberWithZeros } from 'src/helpers/utils'
 

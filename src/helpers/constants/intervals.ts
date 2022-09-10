@@ -1,4 +1,4 @@
-import Interval from 'src/types/Interval'
+import { Interval } from 'src/types/ChromaticScale'
 
 const INTERVALS: Array<Interval> = [
   'Minor 2nd',

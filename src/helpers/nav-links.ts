@@ -1,4 +1,4 @@
-import NavLink from 'src/types/NavLink'
+import { NavLink } from 'src/types/NavLink'
 
 const navLinks: NavLink[] = [
   {

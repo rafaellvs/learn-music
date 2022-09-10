@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import SemitoneIntervalQuestion from 'src/types/SemitoneIntervalQuestion'
+import { SemitoneIntervalQuestion } from 'src/types/SemitoneIntervalQuestion'
 
 import theme from 'src/theme'
 
