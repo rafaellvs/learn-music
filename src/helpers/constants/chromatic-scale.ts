@@ -75,4 +75,4 @@ const CHROMATIC_SCALE: ChromaticScale = [
   },
 ]
 
-export default CHROMATIC_SCALE
+export { CHROMATIC_SCALE }

@@ -6,6 +6,7 @@ import NavBar from 'src/components/NavBar'
 import Page404 from 'src/pages/404'
 import HomePage from 'src/pages/Home'
 import SemitoneIntervalPage from 'src/pages/SemitoneInterval'
+import MajorScalesPage from 'src/pages/MajorScales'
 
 import { Container, MainContent } from './styled'
 
@@ -19,6 +20,7 @@ const App = () => {
           <Route path='*' element={<Page404 />} />
           <Route path='/' element={<HomePage />} />
           <Route path='semitone-interval' element={<SemitoneIntervalPage />} />
+          <Route path='major-scales' element={<MajorScalesPage />} />
         </Routes>
       </MainContent>
     </Container>

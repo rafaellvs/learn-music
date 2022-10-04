@@ -12,13 +12,13 @@ type Note =
 type PitchLabel = 'natural' | 'sharp' | 'flat'
 
 type Pitch = {
-  value: number,
-  natural: Note | null,
-  sharp: Note | null,
-  flat: Note | null,
+  value: number
+  natural: Note | null
+  sharp: Note | null
+  flat: Note | null
 }
 
-type ChromaticScale = Array<Pitch>
+type ChromaticScale = Readonly<Array<Pitch>>
 
 type Interval =
   | 'Minor 2nd'

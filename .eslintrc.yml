@@ -24,4 +24,5 @@ rules: {
   }],
   no-unused-vars: ['warn'],
   no-undef: ['off'],
+  react/jsx-closing-bracket-location: [1, 'line-aligned']
 }

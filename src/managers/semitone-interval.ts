@@ -1,4 +1,4 @@
-import CHROMATIC_SCALE from 'src/helpers/constants/chromatic-scale'
+import { CHROMATIC_SCALE } from 'src/helpers/constants/chromatic-scale'
 
 import { Direction } from 'src/types/ChromaticScale'
 import { SemitoneIntervalQuestion } from 'src/types/SemitoneIntervalQuestion'
