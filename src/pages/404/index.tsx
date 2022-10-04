@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Link from 'src/components/Link'
+import Link from 'src/components/_base/Link'
 
 import { Container } from './styled'
 

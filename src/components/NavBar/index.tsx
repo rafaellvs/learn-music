@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 import navLinks from 'src/helpers/nav-links'
 
-import Link from 'src/components/Link'
+import Link from 'src/components/_base/Link'
 import MenuIcon from './MenuIcon'
 import { Container, DesktopContainer, MobileContainer } from './styled'
 

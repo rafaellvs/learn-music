@@ -4,11 +4,11 @@ import { Note } from 'src/types/ChromaticScale'
 
 import { createMajorScale } from 'src/managers/diatonic-scales'
 
-import Button from 'src/components/Button'
+import Button from 'src/components/_base/Button'
+import NoteLetter from 'src/components/_base/NoteLetter'
 import NoteSelection from 'src/components/NoteSelection'
 import {
   Container,
-  NoteSymbol,
   ButtonsContainer,
   AnswerFeedbackContainer,
 } from './styled'
@@ -68,7 +68,7 @@ const MajorScales = () => {
       <h1>Major Scales</h1>
 
       <p>
-        What are the notes of the <NoteSymbol>{rootNote}</NoteSymbol> major scale?
+        What are the notes of the <NoteLetter>{rootNote}</NoteLetter> major scale?
       </p>
 
       <NoteSelection
@@ -86,9 +86,9 @@ const MajorScales = () => {
               <p>You missed the following notes:</p>
               <p>
                 {answerFeedback.wrongNotes.map((note, index) =>
-                  <NoteSymbol key={note + index}>
+                  <NoteLetter key={note + index}>
                     {`${note} `}
-                  </NoteSymbol>
+                  </NoteLetter>
                 )}
               </p>
             </>
