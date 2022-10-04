@@ -5,13 +5,10 @@ import { SemitoneIntervalQuestion } from 'src/types/SemitoneIntervalQuestion'
 
 import { generateSemitoneIntervalQuestion } from 'src/managers/semitone-interval'
 
+import Button from 'src/components/_base/Button'
+import NoteLetter from 'src/components/_base/NoteLetter'
 import QuestionLog from './QuestionLog'
-import {
-  Container,
-  AnswerButtons,
-  AnswerButton,
-  NoteSymbol,
-} from './styled'
+import { Container, ButtonsContainer } from './styled'
 
 const SemitoneInterval = (): JSX.Element => {
   const [questionLog, setQuestionLog] = useState<SemitoneIntervalQuestion[]>([])
@@ -38,19 +35,20 @@ const SemitoneInterval = (): JSX.Element => {
       <h1>Semitone interval</h1>
 
       <p>
-        What is the distance (semitones) between <NoteSymbol>{firstNote}</NoteSymbol> and <NoteSymbol>{secondNote}</NoteSymbol>, going {direction}?
+        What is the distance (semitones) between <NoteLetter>{firstNote}</NoteLetter> and <NoteLetter>{secondNote}</NoteLetter>, going {direction}?
       </p>
 
-      <AnswerButtons>
+      <ButtonsContainer>
         {Array.from({ length: 12 }).map((_, index) =>
-          <AnswerButton
+          <Button
             key={index}
+            variant='small'
             onClick={() => handleAnswerClick(index + 1)}
           >
             {index + 1}
-          </AnswerButton>
+          </Button>
         )}
-      </AnswerButtons>
+      </ButtonsContainer>
 
       <QuestionLog questions={questionLog} />
     </Container>

@@ -5,11 +5,6 @@ export const Container = styled.div`
   height: 100%;
 `
 
-export const NoteSymbol = styled.span`
-  font-weight: bold;
-  font-size: 125%;
-`
-
 export const ButtonsContainer = styled.div`
   position: absolute;
   transform: translateX(-50%);

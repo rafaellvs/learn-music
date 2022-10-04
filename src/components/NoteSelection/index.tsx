@@ -4,12 +4,12 @@ import { Note } from 'src/types/ChromaticScale'
 
 import { CHROMATIC_SCALE } from 'src/helpers/constants/chromatic-scale'
 
+import Button from 'src/components/_base/Button'
 import {
   Container,
   Notes,
   SelectedNotes,
   EmptyNote,
-  Button,
 } from './styled'
 
 type NoteSelectionProps = {
@@ -39,6 +39,7 @@ const NoteSelection = ({
         {allNotes.map(pitchLabel =>
           <Button
             key={pitchLabel}
+            variant='small'
             disabled={userAnswer.length === 8}
             onClick={() => handleAddNote(pitchLabel)}
           >
@@ -52,6 +53,7 @@ const NoteSelection = ({
         {userAnswer.map((note, index) =>
           <Button
             key={note + index}
+            variant='small'
             onClick={() => handleRemoveNote(index)}
           >
             {note}
