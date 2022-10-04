@@ -11,6 +11,11 @@ const navLinks: NavLink[] = [
     title: 'Semitone Interval',
     href: '/semitone-interval',
   },
+  {
+    id: 2,
+    title: 'Major Scales',
+    href: '/major-scales',
+  },
 ]
 
 export default navLinks
