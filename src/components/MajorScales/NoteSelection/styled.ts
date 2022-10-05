@@ -29,3 +29,8 @@ export const EmptyNote = styled.div`
   height: 3rem;
   border: 1px dashed ${theme.colors.yellow};
 `
+
+export const ScaleDegree = styled.p`
+  padding-top: 0.5rem;
+  font-weight: bold;
+`
