@@ -10,6 +10,7 @@ export const ButtonsContainer = styled.div`
   transform: translateX(-50%);
   bottom: 2rem;
   left: 50%;
+  width: 100%;
 
   button:not(:last-child) {
     margin-right: 1rem;
