@@ -4,7 +4,7 @@ import { Note } from 'src/types/ChromaticScale'
 import { DiatonicScaleQuestion } from 'src/types/Questions'
 import { DiatonicScale } from 'src/types/DiatonicScales'
 
-import { createMajorScale } from 'src/managers/diatonic-scales'
+import { createMajorScale, createMinorScale } from 'src/managers/diatonic-scales'
 
 const useDiatonicScale = (diatonicScale: DiatonicScale) => {
   // Note scale resolver
@@ -12,6 +12,9 @@ const useDiatonicScale = (diatonicScale: DiatonicScale) => {
     switch (diatonicScale.name) {
       case 'Major':
         return createMajorScale().noteScale
+
+      case 'Minor':
+        return createMinorScale().noteScale
 
       default:
         return createMajorScale().noteScale

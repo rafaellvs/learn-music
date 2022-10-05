@@ -10,4 +10,14 @@ const MAJOR_SCALE: DiatonicScale = {
   ],
 }
 
-export { MAJOR_SCALE }
+const MINOR_SCALE: DiatonicScale = {
+  name: 'Minor',
+  pattern: [2, 1, 2, 2, 1, 2, 2],
+  roots: [
+    'C', 'D', 'F', 'E', 'G', 'A', 'B',
+    'C#', 'D#', 'F#', 'G#', 'A#',
+    'Eb', 'Ab', 'Bb',
+  ],
+}
+
+export { MAJOR_SCALE, MINOR_SCALE }

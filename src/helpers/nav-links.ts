@@ -16,6 +16,11 @@ const navLinks: NavLink[] = [
     title: 'Major Scales',
     href: '/major-scales',
   },
+  {
+    id: 3,
+    title: 'Minor Scales',
+    href: '/minor-scales',
+  },
 ]
 
 export default navLinks
