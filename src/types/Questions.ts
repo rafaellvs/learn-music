@@ -11,7 +11,7 @@ type SemitoneIntervalQuestion = {
 }
 
 type DiatonicScaleQuestion = {
-  majorScale: Array<Note>
+  scale: Array<Note>
   userAnswer: Array<Note>
   answerFeedback: {
     isCorrect: boolean

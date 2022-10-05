@@ -1,12 +1,14 @@
 import React from 'react'
 
-import MajorScales from 'src/components/MajorScales'
+import { MAJOR_SCALE } from 'src/helpers/constants/diatonic-scales'
+
+import DiatonicScales from 'src/components/DiatonicScales'
 import { Container } from './styled'
 
 const MajorScalesPage = () => {
   return (
     <Container>
-      <MajorScales />
+      <DiatonicScales diatonicScale={MAJOR_SCALE} />
     </Container>
   )
 }
