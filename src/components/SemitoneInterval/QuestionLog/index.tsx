@@ -18,9 +18,7 @@ type QuestionLogProps = {
   questions: SemitoneIntervalQuestion[]
 }
 
-const QuestionLog = (props: QuestionLogProps): JSX.Element => {
-  const { questions } = props
-
+const QuestionLog = ({ questions }: QuestionLogProps): JSX.Element => {
   return (
     <Container>
       <h1>Log</h1>
