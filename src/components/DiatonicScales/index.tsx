@@ -32,7 +32,7 @@ const DiatonicScales = ({ diatonicScale }: DiatonicScaleProps): JSX.Element => {
       <h1>{scaleName} Scales</h1>
 
       <p>
-        What are the notes of the <NoteLetter>{rootNote}</NoteLetter> major scale?
+        What are the notes of the <NoteLetter>{rootNote}</NoteLetter> {scaleName} scale?
       </p>
 
       <NoteSelection
