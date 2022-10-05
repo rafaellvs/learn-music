@@ -11,6 +11,7 @@ import {
   Notes,
   SelectedNotes,
   EmptyNote,
+  ScaleDegree,
 } from './styled'
 
 type NoteSelectionProps = {
@@ -52,19 +53,24 @@ const NoteSelection = ({
 
       <SelectedNotes>
         {userAnswer.map((note, index) =>
-          <Button
-            key={note + index}
-            variant='small'
-            onClick={() => handleRemoveNote(index)}
-          >
-            {note}
-          </Button>
+          <div key={note + index}>
+            <Button
+              variant='small'
+              onClick={() => handleRemoveNote(index)}
+            >
+              {note}
+            </Button>
+            <ScaleDegree>{index + 1}</ScaleDegree>
+          </div>
         )}
 
         {Array
           .from({ length: 8 - userAnswer.length })
           .map((_, index) =>
-            <EmptyNote key={index} />
+            <div key={index}>
+              <EmptyNote />
+              <ScaleDegree>{index + 1 + userAnswer.length}</ScaleDegree>
+            </div>
           )}
       </SelectedNotes>
     </Container>
