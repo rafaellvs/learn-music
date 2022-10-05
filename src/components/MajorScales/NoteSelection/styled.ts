@@ -4,7 +4,7 @@ import theme from 'src/theme'
 export const Container = styled.div``
 
 export const Notes = styled.div`
-  padding: 1rem 0;
+  padding: 2rem 0;
 `
 
 export const SelectedNotes = styled.div`
@@ -13,6 +13,14 @@ export const SelectedNotes = styled.div`
   
   button, div {
     margin: 0 0.3rem;
+  }
+
+  @media (max-width: 480px) {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: repeat(4, 3rem);
+    grid-gap: 1rem;
+    justify-items: center;
   }
 `
 

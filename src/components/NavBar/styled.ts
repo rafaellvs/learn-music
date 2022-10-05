@@ -15,6 +15,7 @@ export const Container = styled.nav`
   width: 100%;
   background: rgba(0, 0, 0, 0.9);
   border-bottom: 1px solid ${theme.colors.yellow};
+  z-index: 10;
 `
 
 export const DesktopContainer = styled.nav`
@@ -33,7 +34,7 @@ export const MobileContainer = styled.nav<MobileContainerProps>`
     position: absolute;
     background: rgba(0, 0, 0, 1);
     width: 100%;
-    height: 100vh;
+    height: calc(100vh - ${theme.headerHeight});
     top: ${theme.headerHeight};  
     left: ${({ isOpen }) => isOpen ? 0 : '-100%'};
     transition: left 0.4s;
