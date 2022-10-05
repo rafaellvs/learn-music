@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { Note } from 'src/types/ChromaticScale'
+import { DiatonicScaleQuestion } from 'src/types/Questions'
 
 import { CHROMATIC_SCALE } from 'src/helpers/constants/chromatic-scale'
 
@@ -15,7 +16,7 @@ import {
 type NoteSelectionProps = {
   handleAddNote: (note: Note) => void
   handleRemoveNote: (index: number) => void
-  userAnswer: Array<Note>
+  userAnswer: DiatonicScaleQuestion['userAnswer']
 }
 
 const NoteSelection = ({

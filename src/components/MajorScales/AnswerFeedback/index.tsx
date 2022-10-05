@@ -1,12 +1,12 @@
 import React from 'react'
 
-import { DiatonicScaleAnswer } from 'src/types/DiatonicScales'
+import { DiatonicScaleQuestion } from 'src/types/Questions'
 
 import NoteLetter from 'src/components/_base/NoteLetter'
 import { Container } from './styled'
 
 type AnswerFeedbackProps = {
-  answerFeedback: DiatonicScaleAnswer
+  answerFeedback: DiatonicScaleQuestion['answerFeedback']
 }
 
 const AnswerFeedback = ({ answerFeedback }: AnswerFeedbackProps): JSX.Element => {
