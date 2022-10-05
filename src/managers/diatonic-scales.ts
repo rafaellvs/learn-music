@@ -1,4 +1,4 @@
-import { MAJOR_SCALE } from 'src/helpers/constants/diatonic-scales'
+import { MAJOR_SCALE, MINOR_SCALE } from 'src/helpers/constants/diatonic-scales'
 
 import { Pitch, Note } from 'src/types/ChromaticScale'
 import { DiatonicScale } from 'src/types/DiatonicScales'
@@ -56,6 +56,7 @@ const createPitchAndNoteScales = (rootNote: Note, scale: DiatonicScale): CreateS
   return { pitchScale, noteScale }
 }
 
+// Major scale
 const generateRandomMajorScaleRoot = (): Note =>
   MAJOR_SCALE.roots[Math.floor(Math.random() * MAJOR_SCALE.roots.length)]
 
@@ -64,4 +65,17 @@ const createMajorScale = (): CreateScalesReturn => {
   return createPitchAndNoteScales(rootNote, MAJOR_SCALE)
 }
 
-export { createPitchAndNoteScales, createMajorScale }
+// Minor scale
+const generateRandomMinorScaleRoot = (): Note =>
+  MINOR_SCALE.roots[Math.floor(Math.random() * MINOR_SCALE.roots.length)]
+
+const createMinorScale = (): CreateScalesReturn => {
+  const rootNote = generateRandomMinorScaleRoot()
+  return createPitchAndNoteScales(rootNote, MINOR_SCALE)
+}
+
+export {
+  createPitchAndNoteScales,
+  createMajorScale,
+  createMinorScale,
+}
