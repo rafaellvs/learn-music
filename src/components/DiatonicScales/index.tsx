@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { DiatonicScale } from 'src/types/DiatonicScales'
+
 import useDiatonicScale from 'src/hooks/use-diatonic-scale'
 
 import Button from 'src/components/_base/Button'
@@ -8,21 +10,26 @@ import NoteSelection from './NoteSelection'
 import AnswerFeedback from './AnswerFeedback'
 import { Container, ButtonsContainer } from './styled'
 
-const MajorScales = (): JSX.Element => {
+type DiatonicScaleProps = {
+  diatonicScale: DiatonicScale
+}
+const DiatonicScales = ({ diatonicScale }: DiatonicScaleProps): JSX.Element => {
   const {
-    majorScale,
+    scale,
     userAnswer,
     answerFeedback,
     handleAddNote,
     handleRemoveNote,
     clearAnswer,
     reloadScale,
-  } = useDiatonicScale()
-  const rootNote = majorScale[0]
+  } = useDiatonicScale(diatonicScale)
+
+  const scaleName = diatonicScale.name
+  const rootNote = scale[0]
 
   return (
     <Container>
-      <h1>Major Scales</h1>
+      <h1>{scaleName} Scales</h1>
 
       <p>
         What are the notes of the <NoteLetter>{rootNote}</NoteLetter> major scale?
@@ -48,4 +55,4 @@ const MajorScales = (): JSX.Element => {
   )
 }
 
-export default MajorScales
+export default DiatonicScales

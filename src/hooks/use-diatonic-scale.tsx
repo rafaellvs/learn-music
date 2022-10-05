@@ -2,14 +2,28 @@ import { useState, useEffect } from 'react'
 
 import { Note } from 'src/types/ChromaticScale'
 import { DiatonicScaleQuestion } from 'src/types/Questions'
+import { DiatonicScale } from 'src/types/DiatonicScales'
 
 import { createMajorScale } from 'src/managers/diatonic-scales'
 
-const useDiatonicScale = () => {
-  const [majorScale, setMajorScale] = useState<DiatonicScaleQuestion['majorScale']>(createMajorScale().noteScale)
+const useDiatonicScale = (diatonicScale: DiatonicScale) => {
+  // Note scale resolver
+  const getNoteScale = (): DiatonicScaleQuestion['scale'] => {
+    switch (diatonicScale.name) {
+      case 'Major':
+        return createMajorScale().noteScale
+
+      default:
+        return createMajorScale().noteScale
+    }
+  }
+
+  // State
+  const [scale, setScale] = useState<DiatonicScaleQuestion['scale']>(getNoteScale())
   const [userAnswer, setUserAnswer] = useState<DiatonicScaleQuestion['userAnswer']>([])
   const [answerFeedback, setAnswerFeedback] = useState<DiatonicScaleQuestion['answerFeedback']>({ isCorrect: false, wrongNotes: [] })
 
+  // Button handlers
   const handleAddNote = (note: Note): void => {
     userAnswer.length < 8 &&
     setUserAnswer(state => [...state, note])
@@ -31,15 +45,16 @@ const useDiatonicScale = () => {
 
   const reloadScale = (): void => {
     const newScale = createMajorScale().noteScale
-    setMajorScale(newScale)
+    setScale(newScale)
     clearAnswer()
   }
 
+  // Answer verification
   const isUserAnswerCorrect = (): boolean =>
-    userAnswer.every((userNote, index) => userNote === majorScale[index])
+    userAnswer.every((userNote, index) => userNote === scale[index])
 
   const getWrongNotes = (): Array<Note> =>
-    userAnswer.filter((userNote, index) => userNote !== majorScale[index])
+    userAnswer.filter((userNote, index) => userNote !== scale[index])
 
   useEffect(() => {
     if (userAnswer.length === 8) {
@@ -50,8 +65,8 @@ const useDiatonicScale = () => {
   }, [userAnswer])
 
   return {
-    majorScale,
-    setMajorScale,
+    scale,
+    setScale,
     userAnswer,
     setUserAnswer,
     answerFeedback,
