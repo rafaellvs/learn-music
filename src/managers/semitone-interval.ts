@@ -1,7 +1,7 @@
 import { CHROMATIC_SCALE } from 'src/helpers/constants/chromatic-scale'
 
 import { Direction } from 'src/types/ChromaticScale'
-import { SemitoneIntervalQuestion } from 'src/types/SemitoneIntervalQuestion'
+import { SemitoneIntervalQuestion } from 'src/types/Questions'
 
 import {
   generateRandomDirection,

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { v4 as uuidv4 } from 'uuid'
 
-import { SemitoneIntervalQuestion } from 'src/types/SemitoneIntervalQuestion'
+import { SemitoneIntervalQuestion } from 'src/types/Questions'
 
 import { generateSemitoneIntervalQuestion } from 'src/managers/semitone-interval'
 

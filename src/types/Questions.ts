@@ -10,4 +10,13 @@ type SemitoneIntervalQuestion = {
   result: boolean,
 }
 
-export type { SemitoneIntervalQuestion }
+type DiatonicScaleQuestion = {
+  majorScale: Array<Note>
+  userAnswer: Array<Note>
+  answerFeedback: {
+    isCorrect: boolean
+    wrongNotes: Array<Note>
+  }
+}
+
+export type { SemitoneIntervalQuestion, DiatonicScaleQuestion }

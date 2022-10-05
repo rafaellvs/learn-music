@@ -1,14 +1,14 @@
 import { useState, useEffect } from 'react'
 
 import { Note } from 'src/types/ChromaticScale'
-import { DiatonicScaleAnswer } from 'src/types/DiatonicScales'
+import { DiatonicScaleQuestion } from 'src/types/Questions'
 
 import { createMajorScale } from 'src/managers/diatonic-scales'
 
 const useDiatonicScale = () => {
-  const [majorScale, setMajorScale] = useState<Array<Note>>(createMajorScale().noteScale)
-  const [userAnswer, setUserAnswer] = useState<Array<Note>>([])
-  const [answerFeedback, setAnswerFeedback] = useState<DiatonicScaleAnswer>({ isCorrect: false, wrongNotes: [] })
+  const [majorScale, setMajorScale] = useState<DiatonicScaleQuestion['majorScale']>(createMajorScale().noteScale)
+  const [userAnswer, setUserAnswer] = useState<DiatonicScaleQuestion['userAnswer']>([])
+  const [answerFeedback, setAnswerFeedback] = useState<DiatonicScaleQuestion['answerFeedback']>({ isCorrect: false, wrongNotes: [] })
 
   const handleAddNote = (note: Note): void => {
     userAnswer.length < 8 &&
