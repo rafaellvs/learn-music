@@ -1,0 +1,27 @@
+name: 'Deploy to EC2'
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '16.x'
+      - run: yarn
+      - run: yarn build
+      # SSH setup
+      - run: mkdir -p ~/.ssh
+      - run: ssh-keyscan ${{ secrets.EC2_ADDRESS }} >> ~/.ssh/known_hosts && chmod 600 ~/.ssh/known_hosts
+      - run: echo "${{ secrets.EC2_SSH_KEY }}" >> ~/.ssh/private_key.pem && chmod 600 ~/.ssh/private_key.pem
+      # Remove old build
+      - run: ssh -i ~/.ssh/private_key.pem ${{ secrets.EC2_USER }}:${{ secrets.EC2_ADDRESS }} 
+      - run: rm -rf ${{ secrets.EC2_BUILD_PATH }} && exit
+      # Copy build to server
+      - run: scp -i ~/.ssh/private_key.pem -r build ${{ secrets.EC2_USER }}@${{ secrets.EC2_ADDRESS }}:${{ secrets.EC2_WORKDIR }}
