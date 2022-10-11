@@ -9,7 +9,10 @@ import App from 'src/components/App'
 
 WebFont.load({
   google: {
-    families: ['Fira Sans:300,800', 'Roboto Slab:300,400,800'],
+    families: [
+      'Fira Sans:300,800&display=swap',
+      'Roboto Slab:300,400,800&display=swap',
+    ],
   },
 })
 
